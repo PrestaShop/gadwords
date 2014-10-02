@@ -47,7 +47,7 @@
 			</li>
 		</ul>
 		<h3>
-			<a href="https://services.google.com/fb/forms/offregoogleprestashop/" target="_blank" style="color: #279EE0;text-decoration:underline;">Google et Prestashop triplent vos premiers 25€ dépensés !</a>
+			<a href="https://services.google.com/fb/forms/offregoogleprestashop/" target="_blank" style="color: #279EE0;text-decoration:underline;">Google et Prestashop quadruplent votre budget : 75€ offerts pour 25€ dépensés !</a>
 		</h3>
 	</p>
 
