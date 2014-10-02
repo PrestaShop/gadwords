@@ -29,7 +29,7 @@
 
 	<p>
 		Vous souhaitez être plus visible sur Google afin de développer votre magasin en ligne ? Google AdWords est la solution qui vous convient.<br/><br/>
-		Google et Prestashop triplent votre investissement publicitaire en vous offrant 75€ une fois vos premiers 25€ dépensés.<br/><br/>
+		Google et PrestaShop triplent votre investissement publicitaire en vous offrant 75€ une fois vos premiers 25€ dépensés.<br/><br/>
 		<strong>Bénéficiez gratuitement de l'aide d'un expert Google AdWords pour démarrer votre première campagne en appelant le 0 805 540 706.</strong><br/>
 		<h3>Les avantages de Google AdWords</h3>
 		<ul>
@@ -47,7 +47,7 @@
 			</li>
 		</ul>
 		<h3>
-			<a href="https://services.google.com/fb/forms/offregoogleprestashop/" target="_blank" style="color: #279EE0;text-decoration:underline;">Google et Prestashop quadruplent votre budget : 75€ offerts pour 25€ dépensés !</a>
+			<a href="https://services.google.com/fb/forms/offregoogleprestashop/" target="_blank" style="color: #279EE0;text-decoration:underline;">Google et PrestaShop quadruplent votre budget : 75€ offerts pour 25€ dépensés !</a>
 		</h3>
 	</p>
 
