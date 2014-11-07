@@ -38,10 +38,17 @@ class GAdwords extends Module
 		$this->author = 'PrestaShop';
 		$this->need_instance = 1;
 
+		$this->bootstrap = true;
 		parent::__construct();
 
 		$this->displayName = $this->l('Google Adwords');
-		$this->description = $this->l('Vous souhaitez être plus visible sur Google et attirer de nouveaux clients ? 75€ offerts sur Google AdWords !');
+		$this->description = $this->l('Beneficiate from your promotional code £75 free on Google AdWords to rank better on the search engine and attract new customers.');
+		
+		if (_PS_VERSION_ < '1.5')
+			require(_PS_MODULE_DIR_.$this->name.'/backward_compatibility/backward.php');
+		
+		if (!isset($this->_path))
+			$this->_path = _PS_MODULE_DIR_.$this->name;
 	}
 
 	public function install()
@@ -51,12 +58,38 @@ class GAdwords extends Module
 
 	public function hookBackOfficeHeader()
 	{
-		$file_path = __PS_BASE_URI__.'modules/'.$this->name.'/css/gadwords.css';
-		return '<link rel="stylesheet" href="'.$file_path.'" type="text/css" />';
+		if (strcmp(Tools::getValue('configure'), $this->name) === 0)
+		{
+			if (version_compare(_PS_VERSION_, '1.5', '>') == true)
+			{
+				$this->context->controller->addCSS($this->_path.'css/gadwords.css');
+				if (version_compare(_PS_VERSION_, '1.6', '<') == true)
+					$this->context->controller->addCSS($this->_path.'css/gadwords-nobootstrap.css');
+			}
+			else
+			{
+				echo '<link rel="stylesheet" href="'.$this->_path.'css/gadwords.css" type="text/css" />';
+				echo '<link rel="stylesheet" href="'.$this->_path.'css/gadwords-nobootstrap.css" type="text/css" />';
+			}
+		}
 	}
 
 	public function getContent()
 	{
+		//Prepare data for voucher code
+		$data = array(
+			'cmp' => $this->name,
+			'iso_country' => $this->context->country->iso_code,
+			'iso_lang' => $this->context->language->iso_code,
+			'ps_version' => _PS_VERSION_,
+			'host' => Tools::getRemoteAddr()
+		);
+
+		// Call to get voucher code
+		$voucher = Tools::jsonDecode(file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
+		
+		$this->context->smarty->assign(array('module_dir' => $this->_path,
+			'voucher' => (!empty($voucher->code)?$voucher->code:'----')));
 		return $this->display(__FILE__, 'views/templates/admin/gadwords.tpl');
 	}
 }

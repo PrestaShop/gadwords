@@ -24,31 +24,36 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<fieldset id="gadwords">
-	<legend><img src="../modules/gadwords/img/adwords_logo_sm.png" /></legend>
-
-	<p>
-		Vous souhaitez être plus visible sur Google afin de développer votre magasin en ligne ? Google AdWords est la solution qui vous convient.<br/><br/>
-		Google et PrestaShop triplent votre investissement publicitaire en vous offrant 75€ une fois vos premiers 25€ dépensés.<br/><br/>
-		<strong>Bénéficiez gratuitement de l'aide d'un expert Google AdWords pour démarrer votre première campagne en appelant le 0 805 540 706.</strong><br/>
-		<h3>Les avantages de Google AdWords</h3>
-		<ul>
-			<li>
-				<p>&nbsp;&nbsp;- <strong>Puissant</strong> : des millions d'internautes effectuent des recherches sur Google</p>
-			</li>
-			<li>
-				<p>&nbsp;&nbsp;- <strong>Précis</strong> : votre annonce s'affiche uniquement lorsqu'elle est pertinente par rapport à la recherche d'un internaute. Vous ne vous adressez qu'à des personnes potentiellement intéressées par les produits que vous proposez.</p>
-			</li>
-			<li>
-				<p>&nbsp;&nbsp;- <strong>Immédiat</strong> : en un clic, un prospect arrive sur votre site. Vous multipliez ainsi vos ventes.</p>
-			</li>
-			<li>
-				<p>&nbsp;&nbsp;- <strong>Rentable</strong> : vous ne payez que lorsqu'un internaute clique sur votre annonce.</p>
-			</li>
-		</ul>
-		<h3>
-			<a href="https://services.google.com/fb/forms/offregoogleprestashop/" target="_blank" style="color: #279EE0;text-decoration:underline;">Google et PrestaShop quadruplent votre budget : 75€ offerts pour 25€ dépensés !</a>
-		</h3>
-	</p>
-
-</fieldset>
+<div class="panel">
+	<div class="row gadwords-header">
+		<div class="col-xs-12 text-center">
+			<img src="{$module_dir|escape:'html':'UTF-8'}img/google-adwords-logo.jpg" alt="{l s='Google AdWords' mod='mapubfacile'}" />
+		</div>
+	</div>
+	<hr />
+	<div class="gadwords-content">
+		<div class="row">
+			<div class="col-xs-12">
+				<p>
+					<b>
+						{l s='Show your ad to people at the very moment they are searching for what you offer. Google and PrestaShop Google and PrestaShop increase your advertising investment by offering £75 when you spend £25* !' mod='gadwords'}
+					</b>
+				</p>
+				
+				<ul>
+					<li>{l s='Add your promotional code from Prestashop after entering billing details, and we’ll automatically credit your account when you spend £25*.' mod='gadwords'}</li>
+					<li>{l s='Got questions? Call at 0800 169 0489, and a Google AdWords exprt will help you build your first campaign and offer tips on how to get the most out of AdWords.' mod='gadwords'}</li>
+				</ul>
+				<br/>
+				<div class="col-xs-12 text-center">
+					<h4>{l s='Your Google AdWords promotional code for your shop is' mod='gadwords'}:</h4>
+					<pre id="adwords_voucher">{$voucher|escape:htmlall}</pre>
+					<p><a href="{l s='http://www.google.co.uk/ads/get/prestashop75/index.html' mod='gadwords'}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
+				</div>
+				<h5>
+					* {l s='terms and conditions apply.' mod='gadwords'}
+				</h5>
+			</div>
+		</div>
+	</div>
+</div>
