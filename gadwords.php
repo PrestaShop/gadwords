@@ -30,7 +30,7 @@ if (!defined('_PS_VERSION_'))
 
 class GAdwords extends Module
 {
-	function __construct()
+	public function __construct()
 	{
 		$this->name = 'gadwords';
 		$this->tab = 'advertising_marketing';
