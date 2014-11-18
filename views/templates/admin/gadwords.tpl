@@ -36,13 +36,13 @@
 			<div class="col-xs-12">
 				<p>
 					<b>
-						{l s='Show your ad to people at the very moment they are searching for what you offer. Google and PrestaShop Google and PrestaShop increase your advertising investment by offering £75 when you spend £25* !' mod='gadwords'}
+						{l s='Show your ad to people at the very moment they are searching for what you offer. Google and PrestaShop increase your advertising investment by offering £75 when you spend £25* !' mod='gadwords'}
 					</b>
 				</p>
 				
 				<ul>
 					<li>{l s='Add your promotional code from Prestashop after entering billing details, and we’ll automatically credit your account when you spend £25*.' mod='gadwords'}</li>
-					<li>{l s='Got questions? Call at 0800 169 0489, and a Google AdWords exprt will help you build your first campaign and offer tips on how to get the most out of AdWords.' mod='gadwords'}</li>
+					<li>{l s='Got questions? Call at 0800 169 0489, and a Google AdWords expert will help you build your first campaign and offer tips on how to get the most out of AdWords.' mod='gadwords'}</li>
 				</ul>
 				<br/>
 				<div class="col-xs-12 text-center">
