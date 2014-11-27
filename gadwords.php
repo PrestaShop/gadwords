@@ -133,13 +133,13 @@ class GAdwords extends Module
 					if ($content->error === false)
 						$code = $content->code;
 					else
-						Logger::addLog('Module Google AdWords: Error returned by the Gamification ('.$content->code.').', 4);
+						Logger::addLog('Module Google AdWords: Error returned by the Gamification ('.$content->code.').', 3);
 				}
 				else
-					Logger::addLog('Module Google AdWords: Missing required fields.', 4);
+					Logger::addLog('Module Google AdWords: Missing required fields.', 3);
 			}
 			else
-				Logger::addLog('Module Google AdWords: Unexpected data returned from the Gamification.', 4);
+				Logger::addLog('Module Google AdWords: Unexpected data returned from the Gamification.', 3);
 		}
 
 		$this->context->smarty->assign(array(
