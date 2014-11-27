@@ -50,7 +50,7 @@
 				<br/>
 				<div class="col-xs-12 text-center">
 					<h4>{l s='Your Google AdWords promotional code for your shop is' mod='gadwords'}:</h4>
-					<pre id="adwords_voucher">{$voucher|escape:htmlall}</pre>
+					<pre id="adwords_voucher">{$code|escape:htmlall}</pre>
 					<p><a href="{$landing_page|escape:htmlall}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
 				</div>
 				<em class="small">

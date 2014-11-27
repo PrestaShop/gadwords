@@ -120,11 +120,18 @@ class GAdwords extends Module
 		);
 
 		// Call to get voucher code
-		$voucher = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
+		$content = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
+		if ($content && !empty($content->error) && $content->error === false && !empty($content->code))
+			$code = $content->code;
+		else
+		{
+			Logger::addLog('Module Google AdWords: Cannot get the code from the gamification.', 4);
+			$code = '----';
+		}
 		
 		$this->context->smarty->assign(array(
 			'module_dir' => $this->_path,
-			'voucher' => (!empty($voucher->code)?$voucher->code:'----'),
+			'code' => $code,
 			'landing_page' => $landing_page,
 		));
 		return $this->display(__FILE__, 'views/templates/admin/gadwords.tpl');
