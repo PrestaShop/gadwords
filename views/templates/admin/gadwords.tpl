@@ -27,7 +27,7 @@
 <div class="panel">
 	<div class="row gadwords-header">
 		<div class="col-xs-6 text-center">
-			<img src="{$module_dir|escape:'html':'UTF-8'}img/google-adwords-logo.jpg" alt="{l s='Google AdWords' mod='gadwords'}" />
+			<img id="adwords_logo" src="{$module_dir|escape:'html':'UTF-8'}img/google-adwords-logo.jpg" alt="{l s='Google AdWords' mod='gadwords'}" />
 		</div>
 		<div class="col-xs-6 text-center">
 			<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/25AKLJAk-Lk?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
