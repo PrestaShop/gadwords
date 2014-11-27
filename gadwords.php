@@ -41,8 +41,8 @@ class GAdwords extends Module
 		$this->bootstrap = true;
 		parent::__construct();
 
-		$this->displayName = $this->l('Google Adwords');
-		$this->description = $this->l('Beneficiate from your promotional code £75 free on Google AdWords to rank better on the search engine and attract new customers.');
+		$this->displayName = $this->l('Google AdWords');
+		$this->description = $this->l('Benefit from your promotional code: get free advertising on Google AdWords to rank in search results and attract new customers.');
 		
 		if (_PS_VERSION_ < '1.5')
 			require(_PS_MODULE_DIR_.$this->name.'/backward_compatibility/backward.php');
@@ -76,6 +76,40 @@ class GAdwords extends Module
 
 	public function getContent()
 	{
+		switch(strtolower($this->context->country->iso_code))
+		{
+		case 'be':
+			$landing_page = 'http://www.google.com/intl/fr/ads/get/prestashop75/index.html';
+			break;
+		case 'cz':
+			$landing_page = 'http://www.google.com/ads/get/prestashop1000/index.html';
+			break;
+		case 'fr':
+			$landing_page = 'http://www.google.com/intl/fr/ads/get/prestashop75/index.html';
+			break;
+		case 'gb':
+		case 'en':
+			$landing_page = 'http://www.google.co.uk/ads/get/prestashop75/index.html';
+			break;
+		case 'es':
+			$landing_page = 'http://www.google.com/intl/es/ads/get/prestashop75/index.html';
+			break;
+		case 'it':
+			$landing_page = 'http://www.google.com/intl/it/ads/get/prestashop75/index.html';
+			break;
+		case 'nl':
+			$landing_page = 'http://www.google.com/intl/nl/ads/get/prestashop75/index.html';
+			break;
+		case 'pl':
+			$landing_page = 'http://www.google.com/intl/pl/ads/get/prestashop250/index.html';
+			break;
+		case 'ro':
+			$landing_page = 'http://www.google.com/ads/get/prestashop200/index.html';
+			break;
+		default:
+			$landing_page = 'http://www.google.co.uk/adwords/start';
+		}
+		
 		//Prepare data for voucher code
 		$data = array(
 			'cmp' => $this->name,
@@ -86,10 +120,13 @@ class GAdwords extends Module
 		);
 
 		// Call to get voucher code
-		$voucher = Tools::jsonDecode(file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
+		$voucher = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
 		
-		$this->context->smarty->assign(array('module_dir' => $this->_path,
-			'voucher' => (!empty($voucher->code)?$voucher->code:'----')));
+		$this->context->smarty->assign(array(
+			'module_dir' => $this->_path,
+			'voucher' => (!empty($voucher->code)?$voucher->code:'----'),
+			'landing_page' => $landing_page,
+		));
 		return $this->display(__FILE__, 'views/templates/admin/gadwords.tpl');
 	}
 }

@@ -26,8 +26,11 @@
 
 <div class="panel">
 	<div class="row gadwords-header">
-		<div class="col-xs-12 text-center">
-			<img src="{$module_dir|escape:'html':'UTF-8'}img/google-adwords-logo.jpg" alt="{l s='Google AdWords' mod='mapubfacile'}" />
+		<div class="col-xs-6 text-center">
+			<img src="{$module_dir|escape:'html':'UTF-8'}img/google-adwords-logo.jpg" alt="{l s='Google AdWords' mod='gadwords'}" />
+		</div>
+		<div class="col-xs-6 text-center">
+			<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/25AKLJAk-Lk?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
 		</div>
 	</div>
 	<hr />
@@ -36,23 +39,23 @@
 			<div class="col-xs-12">
 				<p>
 					<b>
-						{l s='Show your ad to people at the very moment they are searching for what you offer. Google and PrestaShop increase your advertising investment by offering £75 when you spend £25* !' mod='gadwords'}
+						{l s='Show your ad to people at the very moment they are searching for what you offer. Google and PrestaShop increase your advertising investment by offering free advertising after you start spending!' mod='gadwords'}
 					</b>
 				</p>
 				
 				<ul>
-					<li>{l s='Add your promotional code from Prestashop after entering billing details, and we’ll automatically credit your account when you spend £25*.' mod='gadwords'}</li>
+					<li>{l s='Add your promotional code from Prestashop after entering billing details, and we will automatically credit your account when you spend a minimum credit*.' mod='gadwords'}</li>
 					<li>{l s='Got questions? Call at 0800 169 0489, and a Google AdWords expert will help you build your first campaign and offer tips on how to get the most out of AdWords.' mod='gadwords'}</li>
 				</ul>
 				<br/>
 				<div class="col-xs-12 text-center">
 					<h4>{l s='Your Google AdWords promotional code for your shop is' mod='gadwords'}:</h4>
 					<pre id="adwords_voucher">{$voucher|escape:htmlall}</pre>
-					<p><a href="{l s='http://www.google.co.uk/ads/get/prestashop75/index.html' mod='gadwords'}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
+					<p><a href="{$landing_page|escape:htmlall}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
 				</div>
-				<h5>
+				<em class="small">
 					* {l s='terms and conditions apply.' mod='gadwords'}
-				</h5>
+				</em>
 			</div>
 		</div>
 	</div>
