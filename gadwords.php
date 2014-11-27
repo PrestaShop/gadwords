@@ -113,7 +113,7 @@ class GAdwords extends Module
 
 		//Prepare data for voucher code
 		$data = array(
-			'cmp' => $this->name,
+			'campaign' => $this->name,
 			'iso_country' => $this->context->country->iso_code,
 			'iso_lang' => $this->context->language->iso_code,
 			'ps_version' => _PS_VERSION_,
