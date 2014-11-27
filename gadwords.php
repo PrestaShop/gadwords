@@ -128,7 +128,7 @@ class GAdwords extends Module
 			$content = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
 			if ($content)
 			{
-				if (!empty($content->error) && !empty($content->code))
+				if (isset($content->error) && isset($content->code))
 				{
 					if ($content->error === false)
 						$code = $content->code;
