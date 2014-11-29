@@ -117,13 +117,13 @@ class GAdwords extends Module
 			'iso_country' => $this->context->country->iso_code,
 			'iso_lang' => $this->context->language->iso_code,
 			'ps_version' => _PS_VERSION_,
-			'host' => Tools::getRemoteAddr()
+			'host' => Configuration::get('PS_SHOP_DOMAIN')
 		);
 
 		$code = '----';
 
 		// Call to get voucher code
-		if (!preg_match('/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/', Tools::getRemoteAddr()))
+		if (!preg_match('/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/', $data['host']))
 		{
 			$content = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
 			if ($content)
