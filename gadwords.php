@@ -123,7 +123,7 @@ class GAdwords extends Module
 		$code = '----';
 
 		// Call to get voucher code
-		if (!in_array(Tools::getRemoteAddr(), array('127.0.0.1', 'localhost')))
+		if (!preg_match('/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/', Tools::getRemoteAddr()))
 		{
 			$content = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
 			if ($content)
@@ -141,6 +141,7 @@ class GAdwords extends Module
 			else
 				Logger::addLog('Module Google AdWords: Unexpected data returned from the Gamification.', 3);
 		}
+		else $this->adminDisplayWarning('Your shop seems to be unreachable from Internet. Please check your configuration before using Google AdWords');
 
 		$this->context->smarty->assign(array(
 			'module_dir' => $this->_path,
