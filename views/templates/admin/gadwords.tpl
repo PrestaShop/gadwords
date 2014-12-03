@@ -27,7 +27,7 @@
 <div class="panel">
 	<div class="row gadwords-header">
 		<div class="col-xs-6 text-center">
-			<img id="adwords_logo" src="{$module_dir|escape:'html':'UTF-8'}img/google-adwords-logo.jpg" alt="{l s='Google AdWords' mod='gadwords'}" />
+			<img id="adwords_logo" src="{$module_dir|escape:'html':'UTF-8'}img/header_logo.jpg" alt="{l s='Google AdWords' mod='gadwords'}" />
 		</div>
 		<div class="col-xs-6 text-center">
 			<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/25AKLJAk-Lk?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
@@ -49,9 +49,13 @@
 				</ul>
 				<br/>
 				<div class="col-xs-12 text-center">
-					<h4>{l s='Your Google AdWords promotional code for your shop is' mod='gadwords'}:</h4>
-					<pre id="adwords_voucher">{$code|escape:htmlall}</pre>
-					<p><a href="{$landing_page|escape:htmlall}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
+					{if $is_local === false}
+						<h4>{l s='Your Google AdWords promotional code for your shop is' mod='gadwords'}:</h4>
+						<pre id="adwords_voucher">{$code|escape:htmlall}</pre>
+						<p><a href="{$landing_page|escape:htmlall}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
+					{else}
+						<p><a href="{$landing_page|escape:htmlall}" target="_blank" title="Google AdWords">{l s='Start your campaign' mod='gadwords'}</a></p>
+					{/if}
 				</div>
 				<em class="small">
 					* {l s='terms and conditions apply.' mod='gadwords'}

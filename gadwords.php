@@ -121,9 +121,10 @@ class GAdwords extends Module
 		);
 
 		$code = '----';
+		$is_local = preg_match('/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/', $data['host']);
 
 		// Call to get voucher code
-		if (!preg_match('/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/', $data['host']))
+		if (!$is_local)
 		{
 			$content = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
 			if ($content)
@@ -147,6 +148,7 @@ class GAdwords extends Module
 			'module_dir' => $this->_path,
 			'code' => $code,
 			'landing_page' => $landing_page,
+			'is_local' => $is_local,
 		));
 		return $this->display(__FILE__, 'views/templates/admin/gadwords.tpl');
 	}

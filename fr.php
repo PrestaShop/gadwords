@@ -10,4 +10,5 @@ $_MODULE['<{gadwords}prestashop>gadwords_9b22559aafb75ab90687d7b12cc85973'] = 'E
 $_MODULE['<{gadwords}prestashop>gadwords_2b456146ad32d5cdee08f1e844346e68'] = 'Vous avez des questions ? Contactez le 0 805 981 042 et bénéficiez gratuitement de l\'aide d\'un expert Google AdWords pour créer votre première campagne et vous expliquer comment tirer le meilleur parti d\'AdWords.';
 $_MODULE['<{gadwords}prestashop>gadwords_c391b2a443c8cf6ac0650abb19bc60e2'] = 'Votre code promo Google AdWords pour votre boutique est';
 $_MODULE['<{gadwords}prestashop>gadwords_310ea748429c48440caefe153ff77855'] = 'Commencez votre campagne maintenant en utilisant votre code promo';
+$_MODULE['<{gadwords}prestashop>gadwords_80c94ecd091e7cf16771ecc521edf6a6'] = 'Commencez votre campagne maintenant';
 $_MODULE['<{gadwords}prestashop>gadwords_e64a391c8b0d9015df793a179fb12938'] = 'offre soumise à conditions';
