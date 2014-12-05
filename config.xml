@@ -2,7 +2,7 @@
 <module>
 	<name>gadwords</name>
 	<displayName><![CDATA[Google Adwords]]></displayName>
-	<version><![CDATA[1.3.1]]></version>
+	<version><![CDATA[1.3.2]]></version>
 	<description><![CDATA[Benefit from your promotional code: get free advertising on Google AdWords to rank in search results and attract new customers.]]></description>
 	<author><![CDATA[PrestaShop]]></author>
 	<tab><![CDATA[advertising_marketing]]></tab>
