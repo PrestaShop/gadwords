@@ -35,7 +35,7 @@ class GAdwords extends Module
 	{
 		$this->name = 'gadwords';
 		$this->tab = 'advertising_marketing';
-		$this->version = '1.3.2';
+		$this->version = '1.3.3';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 1;
 
@@ -77,13 +77,16 @@ class GAdwords extends Module
 
 	public function getContent()
 	{
-		switch (Tools::strtolower($this->context->country->iso_code))
+		switch (Tools::strtolower($this->context->language->iso_code))
 		{
 			case 'be':
 				$landing_page = 'http://www.google.com/intl/fr/ads/get/prestashop75/index.html';
 				break;
 			case 'cz':
 				$landing_page = 'http://www.google.com/ads/get/prestashop1000/index.html';
+				break;
+			case 'de':
+				$landing_page = 'http://www.google.com/intl/de/ads/get/prestashop50/index.html';
 				break;
 			case 'fr':
 				$landing_page = 'http://www.google.com/intl/fr/ads/get/prestashop75/index.html';
