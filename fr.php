@@ -3,7 +3,7 @@
 global $_MODULE;
 $_MODULE = array();
 $_MODULE['<{gadwords}prestashop>gadwords_77f0fe9b5917f3651715b0d38db936ad'] = 'Google AdWords';
-$_MODULE['<{gadwords}prestashop>gadwords_5415458b5597ab8900ca053cbf63d939'] = 'Vous souhaitez être plus visible sur Google et attirer de nouveaux clients ? Bénéficiez de votre code promo 75€ offerts sur Google AdWords !';
+$_MODULE['<{gadwords}prestashop>gadwords_d7658be1b56371293cd31faebc89594a'] = 'Vous souhaitez être plus visible sur Google et attirer de nouveaux clients ? Bénéficiez de votre code promo 75€ offerts sur Google AdWords !';
 $_MODULE['<{gadwords}prestashop>gadwords_4bfb064ad861b9d2af3a1cdef6af1bae'] = '//www.youtube.com/embed/GNMZgum0f9g?rel=0&controls=0&showinfo=0';
 $_MODULE['<{gadwords}prestashop>gadwords_26700df78ce041ff7dc0506489b273f6'] = 'Diffusez votre publicité aux internautes au moment où ils cherchent vos produits ou vos services. Google et PrestaShop triplent votre investissement publicitaire en vous offrant 75€ une fois vos premiers 25€ dépensés* !';
 $_MODULE['<{gadwords}prestashop>gadwords_9b22559aafb75ab90687d7b12cc85973'] = 'Entrez votre code promotionnel une fois vos informations de facturation saisies et nous ajouterons automatiquement votre avoir dès €25 dépensés*.';

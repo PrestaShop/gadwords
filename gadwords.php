@@ -35,7 +35,7 @@ class GAdwords extends Module
 	{
 		$this->name = 'gadwords';
 		$this->tab = 'advertising_marketing';
-		$this->version = '1.3.3';
+		$this->version = '1.3.4';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 1;
 
@@ -43,7 +43,7 @@ class GAdwords extends Module
 		parent::__construct();
 
 		$this->displayName = $this->l('Google AdWords');
-		$this->description = $this->l('Benefit from your promotional code: get free advertising on Google AdWords to rank in search results and attract new customers.');
+		$this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
 
 		if (_PS_VERSION_ < '1.5')
 			require(_PS_MODULE_DIR_.$this->name.'/backward_compatibility/backward.php');
