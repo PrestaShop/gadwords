@@ -35,7 +35,7 @@ class GAdwords extends Module
 	{
 		$this->name = 'gadwords';
 		$this->tab = 'advertising_marketing';
-		$this->version = '1.3.5';
+		$this->version = '1.3.6';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 1;
 
