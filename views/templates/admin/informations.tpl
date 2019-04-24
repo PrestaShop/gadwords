@@ -24,7 +24,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<div class="panel col-lg-10 col-lg-offset-1">
+<div class="informations panel col-lg-10 col-lg-offset-1">
 	<div class="col-lg-10 col-lg-offset-1">
 		{* Google present Shopping ads *}
 		<div class="row gadwords_header">

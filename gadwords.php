@@ -152,7 +152,7 @@ class GAdwords extends Module
 			'landing_page' => $landing_page,
 			'is_local' => $is_local,
 		));
-		return $this->display(__FILE__, 'views/templates/admin/gadwords.tpl');
+		return $this->display(__FILE__, 'views/templates/admin/router.tpl');
 	}
 
 }

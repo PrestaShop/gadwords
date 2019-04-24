@@ -79,3 +79,28 @@
 .gadwords-content .material-icons.yellow {
 	color: #ffc100;
 }
+
+/** create ads**/
+.activate_ads {
+	padding: 15px 0;
+}
+.activate_ads p {
+	color: #363A41;
+	font-family: "Open Sans";
+	font-size: 16px;
+	line-height: 24px;
+	margin-top: 10px;
+}
+.activate_ads .btn-primary {
+	margin-top: 20px;
+	border-radius: 1px;
+	box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.1);
+	color: #FFFFFF;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 600;	
+	line-height: 20px;
+	text-transform: capitalize !important;
+	background-color: #24B9D7 !important;
+	border-color: #24B9D7 !important;
+}
