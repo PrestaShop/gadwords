@@ -24,38 +24,45 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<div class="panel">
-	<div class="row gadwords-header">
-		<div class="col-xs-6 text-center">
-			<img id="adwords_logo" src="{$module_dir|escape:'html':'UTF-8'}img/header_logo.jpg" alt="{l s='Google AdWords' mod='gadwords'}" />
-		</div>
-		<div class="col-xs-6 text-center">
-			<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/25AKLJAk-Lk?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
-		</div>
-	</div>
-	<hr />
-	<div class="gadwords-content">
-		<div class="row">
-			<div class="col-xs-12">
-				<p>
-					<b>
-						{l s='Show your ad to people at the very moment they are searching for what you offer. Google and PrestaShop increase your advertising investment by offering free advertising after you start spending!' mod='gadwords'}
-					</b>
-				</p>
-
-				<ul>
-					<li>{l s='Add your promotional code from Prestashop after entering billing details, and we will automatically credit your account when you spend a minimum credit*.' mod='gadwords'}</li>
-					<li>{l s='Got questions? Call at 0800 169 0489, and a Google AdWords expert will help you build your first campaign and offer tips on how to get the most out of AdWords.' mod='gadwords'}</li>
-				</ul>
-				<br/>
-				<div class="col-xs-12 text-center">
-						<h4>{l s='Your Google AdWords promotional code for your shop is' mod='gadwords'}:</h4>
-						<pre id="adwords_voucher">{$code|escape:htmlall}</pre>
-						<p><a href="{$landing_page|escape:htmlall}" target="_blank" title="Google AdWords">{l s='Start your campaign now with your promotional code' mod='gadwords'}</a></p>
+<div class="panel col-lg-10 col-lg-offset-1">
+	<div class="col-lg-10 col-lg-offset-1">
+		{* Google present Shopping ads *}
+		<div class="row gadwords_header">
+			<div class="presentation col-lg-6">
+				<div class="logo col-lg-12">
+					<img src="{$module_dir|escape:'html':'UTF-8'}img/google_2015_logo.png" alt="{l s='Google AdWords' mod='gadwords'}" />
 				</div>
-				<em class="small">
-					* {l s='terms and conditions apply.' mod='gadwords'}
-				</em>
+				<div class="col-lg-12">
+					<div class="row">
+						<h1>Shopping ads</h1>
+						<p>
+							{l s='Reach shoppers who are looking for products you offer, whether they\'re at home, on the go, or in-store. You only pay when they click through to your website or view your local inventory' mod='gadwords'}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="video col-lg-6 text-center">
+				<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/iyglpSl1Ey0?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
+			</div>
+		</div>
+		{* Reassurance *}
+		<div class="row gadwords-content">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="row">
+					<i class="material-icons green">format_align_left</i>
+					<p class="title">{l s='Verify and claim your URL' mod='gadwords'}</p>
+					<p class="content">{l s='Create a Google Merchant Center account and verify and claim the URL for your business website.' mod='gadwords'}</p>
+				</div>
+				<div class="row">
+					<i class="material-icons yellow">cloud_upload</i>
+					<p class="title">{l s='Upload your products' mod='gadwords'}</p>
+					<p class="content">{l s='Upload your product data to Merchant Center so shoppers can see your online and in-store inventory. Enter product details like price, description, and availability.' mod='gadwords'}</p>
+				</div>
+				<div class="row">
+					<i class="material-icons red">edit</i>
+					<p class="title">{l s='Create your campaign' mod='gadwords'}</p>
+					<p class="content">{l s='Link your Google Merchant Center and Google Ads accounts, then create your Shopping ads campaign.' mod='gadwords'}</p>
+				</div>
 			</div>
 		</div>
 	</div>

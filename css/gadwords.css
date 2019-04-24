@@ -23,17 +23,59 @@
 * International Registered Trademark & Property of PrestaShop SA
 */
 
-#content > * {
-	margin: 0 auto;
-	max-width: 900px;
+/** Header **/
+.gadwords_header {
+	padding: 20px 0;
+	border-bottom: 1px solid #DCE1E3;
 }
-
-#adwords_voucher {
-	max-width: 40em;
-	margin:auto;
-	margin-bottom: 10px;
+.gadwords_header .presentation .logo{
+	padding: 0;
 }
-
-#adwords_logo {
-	margin-top:3em;
+.gadwords_header .presentation h1{
+	color: #363A41;
+	font-family: "Open Sans";
+	font-size: 24px;
+	line-height: 33px;
+	margin-top: 0px;
+}
+.gadwords_header .presentation p{
+	margin: 25px 0;
+	color: #363A41;
+	font-family: "Open Sans";
+	font-size: 16px;
+	line-height: 24px;
+}
+/** content **/
+.gadwords-content {
+	margin: 20px 0;
+}
+.gadwords-content .row {
+	margin: 15px 0;
+}
+.gadwords-content .row i{
+	font-size: 34px;
+}
+.gadwords-content .row .title{
+	color: #363A41;
+	font-family: "Open Sans";
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: 600;
+	margin-top: 6px;
+    margin-bottom: 10px;
+}
+.gadwords-content .row .content{
+	color: #6C868E;
+	font-family: "Open Sans";
+	font-size: 14px;
+	line-height: 19px;
+}
+.gadwords-content .material-icons.green {
+	color: #00b555;
+}
+.gadwords-content .material-icons.red {
+	color: #f9001a;
+}
+.gadwords-content .material-icons.yellow {
+	color: #ffc100;
 }
