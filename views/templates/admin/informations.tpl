@@ -49,7 +49,7 @@
 		<div class="row gadwords-content">
 			<div class="col-lg-10 col-lg-offset-1">
 				<div class="row">
-					<i class="material-icons green">format_align_left</i>
+					<i class="material-icons green">playlist_add_check</i>
 					<p class="title">{l s='Verify and claim your URL' mod='gadwords'}</p>
 					<p class="content">{l s='Create a Google Merchant Center account and verify and claim the URL for your business website.' mod='gadwords'}</p>
 				</div>
