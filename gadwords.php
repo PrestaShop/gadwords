@@ -25,133 +25,48 @@
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
-if (!defined('_PS_VERSION_'))
+if (!defined('_PS_VERSION_')) {
 	exit;
+}
 
 class GAdwords extends Module
 {
+	public $name;
+	public $tab;
+	public $version;
+	public $author;
+	public $bootstrap;
+	public $displayName;
+	public $description;
+	public $ps_versions_compliancy;
 
 	public function __construct()
 	{
 		$this->name = 'gadwords';
 		$this->tab = 'advertising_marketing';
-		$this->version = '1.3.6';
+		$this->version = '2.0.0';
 		$this->author = 'PrestaShop';
-		$this->need_instance = 1;
-
 		$this->bootstrap = true;
 		parent::__construct();
 
 		$this->displayName = $this->l('Google AdWords');
 		$this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
-
-		if (_PS_VERSION_ < '1.5')
-			require(_PS_MODULE_DIR_.$this->name.'/backward_compatibility/backward.php');
-
-		if (!isset($this->_path))
-			$this->_path = _PS_MODULE_DIR_.$this->name;
+		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
 	}
 
 	public function install()
 	{
-		return parent::install() && $this->registerHook('backOfficeHeader');
-	}
-
-	public function hookBackOfficeHeader()
-	{
-		if (strcmp(Tools::getValue('configure'), $this->name) === 0)
-		{
-			if (version_compare(_PS_VERSION_, '1.5', '>') == true)
-			{
-				$this->context->controller->addCSS($this->_path.'css/gadwords.css');
-				if (version_compare(_PS_VERSION_, '1.6', '<') == true)
-					$this->context->controller->addCSS($this->_path.'css/gadwords-nobootstrap.css');
-			}
-			else
-			{
-				echo '<link rel="stylesheet" href="'.$this->_path.'css/gadwords.css" type="text/css" />';
-				echo '<link rel="stylesheet" href="'.$this->_path.'css/gadwords-nobootstrap.css" type="text/css" />';
-			}
-		}
+		return parent::install();
 	}
 
 	public function getContent()
 	{
-		switch (Tools::strtolower($this->context->language->iso_code))
-		{
-			case 'be':
-				$landing_page = 'http://www.google.com/intl/fr/ads/get/prestashop75/index.html';
-				break;
-			case 'cz':
-				$landing_page = 'http://www.google.com/ads/get/prestashop1000/index.html';
-				break;
-			case 'de':
-				$landing_page = 'http://www.google.com/intl/de/ads/get/prestashop50/index.html';
-				break;
-			case 'fr':
-				$landing_page = 'http://www.google.com/intl/fr/ads/get/prestashop75/index.html';
-				break;
-			case 'gb':
-			case 'en':
-				$landing_page = 'http://www.google.co.uk/ads/get/prestashop75/index.html';
-				break;
-			case 'es':
-				$landing_page = 'http://www.google.com/intl/es/ads/get/prestashop75/index.html';
-				break;
-			case 'it':
-				$landing_page = 'http://www.google.com/intl/it/ads/get/prestashop75/index.html';
-				break;
-			case 'nl':
-				$landing_page = 'http://www.google.com/intl/nl/ads/get/prestashop75/index.html';
-				break;
-			case 'pl':
-				$landing_page = 'http://www.google.com/intl/pl/ads/get/prestashop250/index.html';
-				break;
-			case 'ro':
-				$landing_page = 'http://www.google.com/ads/get/prestashop200/index.html';
-				break;
-			default:
-				$landing_page = 'http://www.google.co.uk/adwords/start';
-		}
-
-		$is_local = preg_match('/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/', Configuration::get('PS_SHOP_DOMAIN'));
-
-		//Prepare data for voucher code
-		$data = array(
-			'campaign' => $this->name,
-			'iso_country' => $this->context->country->iso_code,
-			'iso_lang' => $this->context->language->iso_code,
-			'ps_version' => _PS_VERSION_,
-			'host' => Configuration::get('PS_SHOP_DOMAIN'),
-			'is_local' => $is_local,
-			'email' => $is_local ? Configuration::get('PS_SHOP_EMAIL') : ''
-		);
-
-		$code = '----';
-
-		// Call to get voucher code
-		$content = Tools::jsonDecode(Tools::file_get_contents('https://gamification.prestashop.com/get_campaign.php?'.http_build_query($data)));
-		if ($content)
-		{
-			if (isset($content->error) && isset($content->code))
-			{
-				if ($content->error === false)
-					$code = $content->code;
-				else
-					Logger::addLog('Module Google AdWords: Error returned by the Gamification ('.$content->code.').', 3);
-			}
-			else
-				Logger::addLog('Module Google AdWords: Missing required fields.', 3);
-		}
-		else
-			Logger::addLog('Module Google AdWords: Unexpected data returned from the Gamification.', 3);
+		$this->context->controller->addCSS($this->_path.'views/css/gadwords.css');
 
 		$this->context->smarty->assign(array(
 			'module_dir' => $this->_path,
-			'code' => $code,
-			'landing_page' => $landing_page,
-			'is_local' => $is_local,
 		));
+
 		return $this->display(__FILE__, 'views/templates/admin/router.tpl');
 	}
 

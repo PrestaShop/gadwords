@@ -30,7 +30,7 @@
 		<div class="row gadwords_header">
 			<div class="presentation col-lg-6">
 				<div class="logo col-lg-12">
-					<img src="{$module_dir|escape:'html':'UTF-8'}img/google_2015_logo.png" alt="{l s='Google AdWords' mod='gadwords'}" />
+					<img src="{$module_dir|escape:'html':'UTF-8'}views/img/google_2015_logo.png" alt="{l s='Google AdWords' mod='gadwords'}" />
 				</div>
 				<div class="col-lg-12">
 					<div class="row">
