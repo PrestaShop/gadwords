@@ -27,13 +27,13 @@
 <div class="create_ads panel col-lg-10 col-lg-offset-1">
 	<div class="activate_ads col-lg-8 col-lg-offset-2">
 		<div class="col-lg-3">
-			<img src="{$module_dir|escape:'html':'UTF-8'}img/target_img.png" alt="{l s='Google AdWords' mod='gadwords'}"/>
+			<img src="{$module_dir|escape:'html':'UTF-8'}views/img/target_img.png" alt="{l s='Google AdWords' mod='gadwords'}"/>
 		</div>
 		<div class="col-lg-6">
 			<p>{l s='Create your Google Ads account and start advertising on Google Shopping with PrestaShop marketing solution, ' mod='gadwords'}<b>PrestaShop Ads.</b></p>
 		</div>
 		<div class="col-lg-2 col-lg-offset-1">
-			<span class="btn btn-primary">{l s='Activate PrestaShop Ads' mod='gadwords'}</span>
+			<a href="{$moduleLink|escape:'html':'UTF-8'}" class="btn btn-primary">{l s='Activate PrestaShop Ads' mod='gadwords'}</a>
 		</div>
 	</div>
 </div>
