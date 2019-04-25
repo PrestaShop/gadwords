@@ -39,15 +39,17 @@ class GAdwordsModuleManagement
 			return true;
 		}
 
-		$this->isModuleOnDisk($moduleName, $moduleId);
-
-		$modulePrestashopAds = Module::getInstanceByName($moduleName);
-		
-		if ($modulePrestashopAds->install()) {
-			return true;
+		if (!$this->isModuleOnDisk($moduleName, $moduleId)) {
+			return false;
 		}
 
-		return false;
+		$modulePrestashopAds = Module::getInstanceByName($moduleName);
+
+		if (!$modulePrestashopAds) {
+			return false;
+		}
+		
+		return $modulePrestashopAds->install();
 	}
 
 	/**
@@ -66,13 +68,7 @@ class GAdwordsModuleManagement
 			return true;
 		}
 
-		$moduleDownloaded = $this->downloadModule($moduleName, $moduleId);
-
-		if ($moduleDownloaded) {
-			return true;
-		}
-		
-		return false;
+		return $this->downloadModule($moduleName, $moduleId);
 	}
 
 	/**

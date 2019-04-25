@@ -33,6 +33,9 @@ require_once dirname(__FILE__).'/classes/GAdwordsModuleManagement.php';
 
 class GAdwords extends Module
 {
+	const PRESTASHOP_ADS_MODULE_NAME = 'emarketing';
+	const PRESTASHOP_ADS_MODULE_ID = 18716;
+
 	public $name;
 	public $tab;
 	public $version;
@@ -41,8 +44,6 @@ class GAdwords extends Module
 	public $displayName;
 	public $description;
 	public $ps_versions_compliancy;
-	public $prestashopAdsModuleName;
-	public $prestashopAdsModuleId;
 	public $isPrestashop16;
 
 	public function __construct()
@@ -57,8 +58,6 @@ class GAdwords extends Module
 		$this->displayName = $this->l('Google AdWords');
 		$this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
 		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
-		$this->prestashopAdsModuleName = 'emarketing';
-		$this->prestashopAdsModuleId = 18716;
 		$this->isPrestashop16 = version_compare(_PS_VERSION_, '1.7.0.0', '<');
 	}
 
@@ -72,7 +71,7 @@ class GAdwords extends Module
 		$moduleManagement = new GAdwordsModuleManagement;
 
 		return parent::install() 
-			&& $moduleManagement->moduleManagement($this->prestashopAdsModuleName, $this->prestashopAdsModuleId);
+			&& $moduleManagement->moduleManagement(self::PRESTASHOP_ADS_MODULE_NAME, self::PRESTASHOP_ADS_MODULE_ID);
 	}
 
 	/**
@@ -96,19 +95,19 @@ class GAdwords extends Module
 	 */
 	private function getModulePrestashopAdsLink()
 	{
-		if (!Module::isInstalled($this->prestashopAdsModuleName)) {
+		if (!Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME)) {
 			return '';
 		}
 
 		if ($this->isPrestashop16) {
-			return $this->context->link->getAdminLink('AdminModules').'&configure='.$this->prestashopAdsModuleName;
+			return $this->context->link->getAdminLink('AdminModules').'&configure='.self::PRESTASHOP_ADS_MODULE_NAME;
 		}
 
 		return $this->context->link->getAdminLink(
 			'AdminModules', 
 			true, 
 			false, 
-			array('configure' => $this->prestashopAdsModuleName)
+			array('configure' => self::PRESTASHOP_ADS_MODULE_NAME)
 		);
 	}
 
@@ -124,7 +123,7 @@ class GAdwords extends Module
 		$this->context->smarty->assign(array(
 			'module_dir' => $this->_path,
 			'moduleLink' => $this->getModulePrestashopAdsLink(),
-			'modulePrestashopAdsInstalled' => Module::isInstalled($this->prestashopAdsModuleName),
+			'modulePrestashopAdsInstalled' => Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME),
 		));
 
 		return $this->display(__FILE__, 'views/templates/admin/router.tpl');
