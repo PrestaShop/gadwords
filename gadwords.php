@@ -29,6 +29,8 @@ if (!defined('_PS_VERSION_')) {
 	exit;
 }
 
+require_once dirname(__FILE__).'/classes/GAdwordsModuleManagement.php';
+
 class GAdwords extends Module
 {
 	public $name;
@@ -41,6 +43,7 @@ class GAdwords extends Module
 	public $ps_versions_compliancy;
 	public $prestashopAdsModuleName;
 	public $prestashopAdsModuleId;
+	public $isPrestashop16;
 
 	public function __construct()
 	{
@@ -56,98 +59,74 @@ class GAdwords extends Module
 		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
 		$this->prestashopAdsModuleName = 'emarketing';
 		$this->prestashopAdsModuleId = 18716;
+		$this->isPrestashop16 = version_compare(_PS_VERSION_, '1.7.0.0', '<');
 	}
 
+	/**
+	 * Install the module gadwords and manage the module Prestashop Ads
+	 *
+	 * @return bool
+	 */
 	public function install()
 	{
-		return parent::install() && $this->modulePrestashopAdsManagement();
+		$moduleManagement = new GAdwordsModuleManagement;
+
+		return parent::install() 
+			&& $moduleManagement->moduleManagement($this->prestashopAdsModuleName, $this->prestashopAdsModuleId);
 	}
 
-	public function getContent()
+	/**
+	 * Load Assets 
+	 *
+	 * @return void
+	 */
+	private function loadAssets()
 	{
-		$this->context->controller->addCSS($this->_path.'views/css/gadwords.css');
+		if ($this->isPrestashop16) {
+			$this->context->controller->addCSS('//fonts.googleapis.com/icon?family=Material+Icons');
+		}
 
-		$modulePrestashopAdsLink = $this->context->link->getAdminLink(
+		$this->context->controller->addCSS($this->_path.'views/css/gadwords.css');
+	}
+
+	/**
+	 * Get the module's configuration link for Prestashop 1.6 or Prestashop 1.7
+	 *
+	 * @return string
+	 */
+	private function getModulePrestashopAdsLink()
+	{
+		if (!Module::isInstalled($this->prestashopAdsModuleName)) {
+			return '';
+		}
+
+		if ($this->isPrestashop16) {
+			return $this->context->link->getAdminLink('AdminModules').'&configure='.$this->prestashopAdsModuleName;
+		}
+
+		return $this->context->link->getAdminLink(
 			'AdminModules', 
 			true, 
 			false, 
 			array('configure' => $this->prestashopAdsModuleName)
 		);
+	}
+
+	/**
+	 * getContent
+	 *
+	 * @return string
+	 */
+	public function getContent()
+	{
+		$this->loadAssets();
 
 		$this->context->smarty->assign(array(
 			'module_dir' => $this->_path,
-			'moduleLink' => $modulePrestashopAdsLink,
+			'moduleLink' => $this->getModulePrestashopAdsLink(),
+			'modulePrestashopAdsInstalled' => Module::isInstalled($this->prestashopAdsModuleName),
 		));
 
 		return $this->display(__FILE__, 'views/templates/admin/router.tpl');
 	}
-
-	/**
-	 * Manage the module and return the module configuration link if it is installed
-	 *
-	 * @return string
-	 */
-	private function modulePrestashopAdsManagement()
-	{
-		// Is the module is installed ?
-		if (Module::isInstalled($this->prestashopAdsModuleName)) {
-			return true;
-		}
-
-		$this->isModuleOnDisk($this->prestashopAdsModuleName, $this->prestashopAdsModuleId);
-
-		$modulePrestashopAds = Module::getInstanceByName($this->prestashopAdsModuleName);
-		
-		if ($modulePrestashopAds->install()) {
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Check if a module is on the disk
-	 *
-	 * @param  string $moduleName
-	 * @param  int $moduleId
-	 *
-	 * @return bool
-	 */
-	private function isModuleOnDisk($moduleName, $moduleId)
-	{
-		$modulesOnDisk = Module::getModulesDirOnDisk();
-
-		if (in_array($moduleName, $modulesOnDisk)) {
-			return true;
-		}
-
-		$moduleDownloaded = $this->downloadModule($moduleName, $moduleId);
-
-		if ($moduleDownloaded) {
-			return true;
-		}
-		
-		return false;
-	}
-
-	/**
-	 * Download module from Addons
-	 *
-	 * @param  string $moduleName
-	 * @param  int $moduleId
-	 *
-	 * @return bool
-	 */
-	private function downloadModule($moduleName, $moduleId)
-	{
-		$length = file_put_contents(_PS_MODULE_DIR_.basename($moduleName).'.zip', Tools::addonsRequest('module', array('id_module' => $moduleId)));
-			
-		if (!empty($length) && Tools::ZipExtract(_PS_MODULE_DIR_.basename($moduleName).'.zip', _PS_MODULE_DIR_)) {
-			@unlink(_PS_MODULE_DIR_.basename($moduleName).'.zip');
-			return true;
-		}
-
-		return false;
-	}
-
 }
