@@ -42,7 +42,7 @@
 				</div>
 			</div>
 			<div class="video col-lg-6 text-center">
-				<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/iyglpSl1Ey0?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
+				<span class="items-video-promotion"><object type="text/html" data="{l s='//www.youtube.com/embed/FY-rs8qGDYw?rel=0&amp;controls=0&amp;showinfo=0' mod='gadwords'}" width="400" height="225"></object></span>
 			</div>
 		</div>
 		{* Reassurance *}
