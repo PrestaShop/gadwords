@@ -20,80 +20,80 @@
  *
  *  @author    PrestaShop SA <contact@prestashop.com>
  *  @copyright 2007-2019 PrestaShop SA
- *  @version	Release: $Revision: 17142 $
+ *  @version   Release: $Revision: 17142 $
  *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
 class GAdwordsModuleManagement
 {
-	/**
-	 * Manage the module and return the module configuration link if it is installed
-	 *
-	 * @param  string $moduleName
-	 * @param  int $moduleId
-	 *
-	 * @return bool
-	 */
-	public function moduleManagement(string $moduleName, int $moduleId)
-	{
-		// Is the module is installed ?
-		if (Module::isInstalled($moduleName)) {
-			return true;
-		}
+    /**
+     * Manage the module and return the module configuration link if it is installed
+     *
+     * @param  string $moduleName
+     * @param  int $moduleId
+     *
+     * @return bool
+     */
+    public function moduleManagement(string $moduleName, int $moduleId)
+    {
+        // Is the module is installed ?
+        if (Module::isInstalled($moduleName)) {
+            return true;
+        }
 
-		if (!$this->isModuleOnDisk($moduleName, $moduleId)) {
-			return false;
-		}
+        if (!$this->isModuleOnDisk($moduleName, $moduleId)) {
+            return false;
+        }
 
-		$modulePrestashopAds = Module::getInstanceByName($moduleName);
+        $modulePrestashopAds = Module::getInstanceByName($moduleName);
 
-		if (!$modulePrestashopAds) {
-			return false;
-		}
+        if (!$modulePrestashopAds) {
+            return false;
+        }
 
-		return $modulePrestashopAds->install();
-	}
+        return $modulePrestashopAds->install();
+    }
 
-	/**
-	 * Check if a module is on the disk
-	 *
-	 * @param  string $moduleName
-	 * @param  int $moduleId
-	 *
-	 * @return bool
-	 */
-	private function isModuleOnDisk(string $moduleName, int $moduleId)
-	{
-		$modulesOnDisk = Module::getModulesDirOnDisk();
+    /**
+     * Check if a module is on the disk
+     *
+     * @param  string $moduleName
+     * @param  int $moduleId
+     *
+     * @return bool
+     */
+    private function isModuleOnDisk(string $moduleName, int $moduleId)
+    {
+        $modulesOnDisk = Module::getModulesDirOnDisk();
 
-		if (in_array($moduleName, $modulesOnDisk)) {
-			return true;
-		}
+        if (in_array($moduleName, $modulesOnDisk)) {
+            return true;
+        }
 
-		return $this->downloadModule($moduleName, $moduleId);
-	}
+        return $this->downloadModule($moduleName, $moduleId);
+    }
 
-	/**
-	 * Download module from Addons
-	 *
-	 * @param  string $moduleName
-	 * @param  int $moduleId
-	 *
-	 * @return bool
-	 */
-	public function downloadModule(string $moduleName, int $moduleId)
-	{
-		$length = file_put_contents(
-			_PS_MODULE_DIR_.basename($moduleName).'.zip',
-			Tools::addonsRequest('module', array('id_module' => $moduleId))
-		);
+    /**
+     * Download module from Addons
+     *
+     * @param  string $moduleName
+     * @param  int $moduleId
+     *
+     * @return bool
+     */
+    public function downloadModule(string $moduleName, int $moduleId)
+    {
+        $length = file_put_contents(
+            _PS_MODULE_DIR_.basename($moduleName).'.zip',
+            Tools::addonsRequest('module', array('id_module' => $moduleId))
+        );
 
-		if (!empty($length) && Tools::ZipExtract(_PS_MODULE_DIR_.basename($moduleName).'.zip', _PS_MODULE_DIR_)) {
-			@unlink(_PS_MODULE_DIR_.basename($moduleName).'.zip');
-			return true;
-		}
+        if (!empty($length) && Tools::ZipExtract(_PS_MODULE_DIR_.basename($moduleName).'.zip', _PS_MODULE_DIR_)) {
+            @unlink(_PS_MODULE_DIR_.basename($moduleName).'.zip');
+            return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 }

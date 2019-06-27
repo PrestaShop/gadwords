@@ -24,26 +24,26 @@
 */
 
 var installModule = (e) => {
-	$('#gadwords_action-btn #gadwords_installmodule').hide();
-	$('#gadwords_action-btn .loader').show();
-	$.ajax({
-		type: 'POST',
-		url: gadwords_controller_url,
-		dataType: 'json',
-		data: {
-			controller : gadwords_controller_name,
-			action : 'InstallModule',
-			ajax : true
-		},
-		success: (json) => {
-			$('#gadwords_action-btn .loader').hide();
-			if (json === true) {
-				$('#gadwords_action-btn a').show();
-			} else {
-				$('#gadwords_action-btn #gadwords_installmodule').show();
-			}
-		}
-	});
+    $('#gadwords_action-btn #gadwords_installmodule').hide();
+    $('#gadwords_action-btn .loader').show();
+    $.ajax({
+        type: 'POST',
+        url: gadwords_controller_url,
+        dataType: 'json',
+        data: {
+            controller : gadwords_controller_name,
+            action : 'InstallModule',
+            ajax : true
+        },
+        success: (json) => {
+            $('#gadwords_action-btn .loader').hide();
+            if (json === true) {
+                $('#gadwords_action-btn a').show();
+            } else {
+                $('#gadwords_action-btn #gadwords_installmodule').show();
+            }
+        }
+    });
 }
 
 $(document).on('click', '#gadwords_installmodule', installModule);

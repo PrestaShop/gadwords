@@ -20,57 +20,57 @@
  *
  *  @author    PrestaShop SA <contact@prestashop.com>
  *  @copyright 2007-2019 PrestaShop SA
- *  @version	Release: $Revision: 17142 $
+ *  @version   Release: $Revision: 17142 $
  *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
 if (!defined('_PS_VERSION_')) {
-	exit;
+    exit;
 }
 
 class GAdwords extends Module
 {
-	const PRESTASHOP_ADS_MODULE_NAME = 'emarketing';
-	const PRESTASHOP_ADS_MODULE_ID = 18716;
+    const PRESTASHOP_ADS_MODULE_NAME = 'emarketing';
+    const PRESTASHOP_ADS_MODULE_ID = 18716;
 
-	public $name;
-	public $tab;
-	public $version;
-	public $author;
-	public $bootstrap;
-	public $displayName;
-	public $description;
-	public $ps_versions_compliancy;
-	public $isPrestashop16;
+    public $name;
+    public $tab;
+    public $version;
+    public $author;
+    public $bootstrap;
+    public $displayName;
+    public $description;
+    public $ps_versions_compliancy;
+    public $isPrestashop16;
 
-	public function __construct()
-	{
-		$this->name = 'gadwords';
-		$this->tab = 'advertising_marketing';
-		$this->version = '2.0.0';
-		$this->author = 'PrestaShop';
-		$this->bootstrap = true;
-		parent::__construct();
+    public function __construct()
+    {
+        $this->name = 'gadwords';
+        $this->tab = 'advertising_marketing';
+        $this->version = '2.0.0';
+        $this->author = 'PrestaShop';
+        $this->bootstrap = true;
+        parent::__construct();
 
-		$this->displayName = $this->l('Google AdWords');
-		$this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
-		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
-		$this->isPrestashop16 = version_compare(_PS_VERSION_, '1.7.0.0', '<');
-		$this->controller = 'AdminModuleManager';
-	}
+        $this->displayName = $this->l('Google AdWords');
+        $this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
+        $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
+        $this->isPrestashop16 = version_compare(_PS_VERSION_, '1.7.0.0', '<');
+        $this->controller = 'AdminModuleManager';
+    }
 
-	/**
-	 * Install the module gadwords and manage the module Prestashop Ads
-	 *
-	 * @return bool
-	 */
-	public function install()
-	{
-		return parent::install() & $this->installTab();
-	}
+    /**
+     * Install the module gadwords and manage the module Prestashop Ads
+     *
+     * @return bool
+     */
+    public function install()
+    {
+        return parent::install() & $this->installTab();
+    }
 
-	/**
+    /**
      * This method is often use to create an ajax controller
      *
      * @param none
@@ -79,78 +79,78 @@ class GAdwords extends Module
     private function installTab()
     {
         $tab = new Tab();
-		$tab->class_name = $this->controller;
-		$tab->active = 1;
-		$tab->name = array();
+        $tab->class_name = $this->controller;
+        $tab->active = 1;
+        $tab->name = array();
 
-		foreach (Language::getLanguages(true) as $lang) {
-			$tab->name[$lang['id_lang']] = $this->name;
-		}
+        foreach (Language::getLanguages(true) as $lang) {
+            $tab->name[$lang['id_lang']] = $this->name;
+        }
 
-		$tab->id_parent = -1;
-		$tab->module = $this->name;
+        $tab->id_parent = -1;
+        $tab->module = $this->name;
 
-		return $tab->add();
+        return $tab->add();
     }
 
-	/**
-	 * Load Assets
-	 *
-	 * @return void
-	 */
-	private function loadAssets()
-	{
-		if ($this->isPrestashop16) {
-			$this->context->controller->addCSS('//fonts.googleapis.com/icon?family=Material+Icons');
-		}
+    /**
+     * Load Assets
+     *
+     * @return void
+     */
+    private function loadAssets()
+    {
+        if ($this->isPrestashop16) {
+            $this->context->controller->addCSS('//fonts.googleapis.com/icon?family=Material+Icons');
+        }
 
-		$this->context->controller->addCSS($this->_path.'views/css/gadwords.css');
-		$this->context->controller->addJS($this->_path.'views/js/admin.js');
+        $this->context->controller->addCSS($this->_path.'views/css/gadwords.css');
+        $this->context->controller->addJS($this->_path.'views/js/admin.js');
 
-		Media::addJsDef(array(
-			'gadwords_controller_url' => $this->context->link->getAdminLink($this->controller),
+        Media::addJsDef(array(
+            'gadwords_controller_url' => $this->context->link->getAdminLink($this->controller),
             'gadwords_controller_name' => $this->controller,
         ));
-	}
+    }
 
-	/**
-	 * Get the module's configuration link for Prestashop 1.6 or Prestashop 1.7
-	 *
-	 * @return string
-	 */
-	private function getModulePrestashopAdsLink()
-	{
-		if (!Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME)) {
-			return '';
-		}
+    /**
+     * Get the module's configuration link for Prestashop 1.6 or Prestashop 1.7
+     *
+     * @return string
+     */
+    private function getModulePrestashopAdsLink()
+    {
+        if (!Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME)) {
+            return '';
+        }
 
-		if ($this->isPrestashop16) {
-			return $this->context->link->getAdminLink('AdminModules').'&configure='.self::PRESTASHOP_ADS_MODULE_NAME;
-		}
+        if ($this->isPrestashop16) {
+            return $this->context->link->getAdminLink('AdminModules').'&configure='.self::PRESTASHOP_ADS_MODULE_NAME;
+        }
 
-		return $this->context->link->getAdminLink(
-			'AdminModules',
-			true,
-			false,
-			array('configure' => self::PRESTASHOP_ADS_MODULE_NAME)
-		);
-	}
+        return $this->context->link->getAdminLink(
+            'AdminModules',
+            true,
+            false,
+            array('configure' => self::PRESTASHOP_ADS_MODULE_NAME)
+        );
+    }
 
-	/**
-	 * getContent
-	 *
-	 * @return string
-	 */
-	public function getContent()
-	{
-		$this->loadAssets();
+    /**
+     * getContent
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        $this->loadAssets();
 
-		$this->context->smarty->assign(array(
-			'module_dir' => $this->_path,
-			'moduleLink' => $this->getModulePrestashopAdsLink(),
-			'modulePrestashopAdsInstalled' => Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME),
-		));
+        $this->context->smarty->assign(array(
+            'module_dir' => $this->_path,
+            'moduleLink' => $this->getModulePrestashopAdsLink(),
+            'modulePrestashopAdsInstalled' => Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME),
+        ));
 
-		return $this->display(__FILE__, 'views/templates/admin/router.tpl');
-	}
+        return $this->display(__FILE__, 'views/templates/admin/router.tpl');
+    }
 }
