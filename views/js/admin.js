@@ -26,6 +26,7 @@
 var installModule = (e) => {
     $('#gadwords_action-btn #gadwords_installmodule').hide();
     $('#gadwords_action-btn .loader').show();
+
     $.ajax({
         type: 'POST',
         url: gadwords_controller_url,
@@ -37,7 +38,9 @@ var installModule = (e) => {
         },
         success: (json) => {
             $('#gadwords_action-btn .loader').hide();
-            if (json === true) {
+            console.log(json);
+            if (json.installed === true) {
+				$('#gadwords_action-btn a').attr("href", json.moduleLink);
                 $('#gadwords_action-btn a').show();
             } else {
                 $('#gadwords_action-btn #gadwords_installmodule').show();

@@ -36,13 +36,18 @@ class AdminModuleManagerController extends ModuleAdminController
      */
     public function ajaxProcessInstallModule()
     {
-        $installModule = new GAdwordsModuleManagement();
+        $moduleAds = new GAdwordsModuleManagement();
 
-        $return = $installModule->moduleManagement(
+        $installModule = $moduleAds->moduleManagement(
             $this->module::PRESTASHOP_ADS_MODULE_NAME,
             $this->module::PRESTASHOP_ADS_MODULE_ID
         );
 
-        $this->ajaxDie(\Tools::jsonEncode($return));
+        $returnJson = array(
+            'installed' => $installModule,
+            'moduleLink' => $this->module->getModulePrestashopAdsLink($installModule),
+        );
+
+        $this->ajaxDie(\Tools::jsonEncode($returnJson));
     }
 }

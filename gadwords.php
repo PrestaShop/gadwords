@@ -116,11 +116,13 @@ class GAdwords extends Module
     /**
      * Get the module's configuration link for Prestashop 1.6 or Prestashop 1.7
      *
+     * @param  bool $moduleIsInstalled
+     *
      * @return string
      */
-    private function getModulePrestashopAdsLink()
+    public function getModulePrestashopAdsLink(bool $moduleIsInstalled)
     {
-        if (!Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME)) {
+        if (false === $moduleIsInstalled) {
             return '';
         }
 
@@ -145,10 +147,12 @@ class GAdwords extends Module
     {
         $this->loadAssets();
 
+        $moduleAdsIsInstalled = Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME);
+
         $this->context->smarty->assign(array(
             'module_dir' => $this->_path,
-            'moduleLink' => $this->getModulePrestashopAdsLink(),
-            'modulePrestashopAdsInstalled' => Module::isInstalled(self::PRESTASHOP_ADS_MODULE_NAME),
+            'moduleLink' => $this->getModulePrestashopAdsLink($moduleAdsIsInstalled),
+            'modulePrestashopAdsInstalled' => $moduleAdsIsInstalled,
         ));
 
         return $this->display(__FILE__, 'views/templates/admin/router.tpl');
