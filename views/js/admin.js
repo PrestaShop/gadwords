@@ -38,10 +38,10 @@ var installModule = (e) => {
         },
         success: (json) => {
             $('#gadwords_action-btn .loader').hide();
-            console.log(json);
+
             if (json.installed === true) {
-				$('#gadwords_action-btn a').attr("href", json.moduleLink);
-                $('#gadwords_action-btn a').show();
+                // redirect to module configuration's page
+                window.location.href = json.moduleLink;
             } else {
                 $('#gadwords_action-btn #gadwords_installmodule').show();
             }
