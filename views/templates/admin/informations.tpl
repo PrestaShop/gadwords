@@ -35,9 +35,8 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <img src="{$module_dir|escape:'html':'UTF-8'}views/img/for_shopping.png" alt="{l s='for shopping' mod='gadwords'}" />
-                        {* <h1>Shopping ads</h1> *}
                         <p>
-                            {l s='Reach shoppers who are looking for products you offer, whether they\'re at home, on the go, or in-store. You only pay when they click through to your website or view your local inventory' mod='gadwords'}
+                            {l s='Make it easy for shoppers to discover and buy your products with a Google Smart Shopping campaign in PrestaShop.' mod='gadwords'}
                         </p>
                     </div>
                 </div>
@@ -54,8 +53,8 @@
                         <img src="{$module_dir|escape:'html':'UTF-8'}views/img/Ads_icon_benefit01.png"/>
                     </div>
                     <div class="col-lg-10">
-                        <p class="title">{l s='Verify and claim your URL' mod='gadwords'}</p>
-                        <p class="content">{l s='Create a Google Merchant Center account and verify and claim the URL for your business website.' mod='gadwords'}</p>
+                        <p class="title">{l s='Smarter Campaigns. Wider reach.' mod='gadwords'}</p>
+                        <p class="content">{l s='Reach shoppers searching for the products you offer at the moment they want to purchase them - across Google Search, YouTube, Gmail and more!' mod='gadwords'}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -63,8 +62,8 @@
                         <img src="{$module_dir|escape:'html':'UTF-8'}views/img/Ads_icon_benefit02.png"/>
                     </div>
                     <div class="col-lg-10">
-                        <p class="title">{l s='Upload your products' mod='gadwords'}</p>
-                        <p class="content">{l s='Upload your product data to Merchant Center so shoppers can see your online and in-store inventory. Enter product details like price, description, and availability.' mod='gadwords'}</p>
+                        <p class="title">{l s='No time? No problem!' mod='gadwords'}</p>
+                        <p class="content">{l s='After installation, all you need to do is setting a budget and Google smart technology does all the rest, like ad placement and bidding. Pay only when shoppers click on your Ads.' mod='gadwords'}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -72,8 +71,8 @@
                         <img src="{$module_dir|escape:'html':'UTF-8'}views/img/Ads_icon_benefit03.png"/>
                     </div>
                     <div class="col-lg-10">
-                        <p class="title">{l s='Create your campaign' mod='gadwords'}</p>
-                        <p class="content">{l s='Link your Google Merchant Center and Google Ads accounts, then create your Shopping ads campaign.' mod='gadwords'}</p>
+                        <p class="title">{l s='A picture is worth a thousand words' mod='gadwords'}</p>
+                        <p class="content">{l s='Many advertisers will see their Click Through Rate double or even triple with Shopping ads compared with text-only ads.' mod='gadwords'}</p>
                     </div>
                 </div>
             </div>
