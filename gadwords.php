@@ -53,8 +53,8 @@ class GAdwords extends Module
         $this->bootstrap = true;
         parent::__construct();
 
-        $this->displayName = $this->l('Google AdWords');
-        $this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
+        $this->displayName = $this->l('Google Ads');
+        $this->description = $this->l('Get visible results with Shopping Ads from Google. Make it easy for shoppers to discover and buy your products with a Google Smart Shopping campaign in PrestaShop.');
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
         $this->isPrestashop16 = version_compare(_PS_VERSION_, '1.7.0.0', '<');
         $this->controller = 'AdminModuleManager';
