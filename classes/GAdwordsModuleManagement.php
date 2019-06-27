@@ -35,7 +35,7 @@ class GAdwordsModuleManagement
      *
      * @return bool
      */
-    public function moduleManagement(string $moduleName, int $moduleId)
+    public function moduleManagement($moduleName, $moduleId)
     {
         // Is the module is installed ?
         if (Module::isInstalled($moduleName)) {
@@ -63,7 +63,7 @@ class GAdwordsModuleManagement
      *
      * @return bool
      */
-    private function isModuleOnDisk(string $moduleName, int $moduleId)
+    private function isModuleOnDisk($moduleName, $moduleId)
     {
         $modulesOnDisk = Module::getModulesDirOnDisk();
 
@@ -82,7 +82,7 @@ class GAdwordsModuleManagement
      *
      * @return bool
      */
-    public function downloadModule(string $moduleName, int $moduleId)
+    public function downloadModule($moduleName, $moduleId)
     {
         $length = file_put_contents(
             _PS_MODULE_DIR_.basename($moduleName).'.zip',

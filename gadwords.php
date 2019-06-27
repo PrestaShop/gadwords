@@ -110,6 +110,7 @@ class GAdwords extends Module
         Media::addJsDef(array(
             'gadwords_controller_url' => $this->context->link->getAdminLink($this->controller),
             'gadwords_controller_name' => $this->controller,
+            'gadwords_ajax_error' => $this->l('Unable to install Prestashop Ads'),
         ));
     }
 
@@ -120,7 +121,7 @@ class GAdwords extends Module
      *
      * @return string
      */
-    public function getModulePrestashopAdsLink(bool $moduleIsInstalled)
+    public function getModulePrestashopAdsLink($moduleIsInstalled)
     {
         if (false === $moduleIsInstalled) {
             return '';

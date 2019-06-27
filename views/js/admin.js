@@ -43,8 +43,11 @@ var installModule = (e) => {
                 // redirect to module configuration's page
                 window.location.href = json.moduleLink;
             } else {
-                $('#gadwords_action-btn #gadwords_installmodule').show();
+                $('#gadwords_installmodule').show();
             }
+        },
+        error: () => {
+            $.growl.error({ title: "Notice!", message: gadwords_ajax_error });
         }
     });
 }
