@@ -32,8 +32,14 @@
 		<div class="col-lg-6">
 			<p>{l s='Create your Google Ads account and start advertising on Google Shopping with PrestaShop marketing solution, ' mod='gadwords'}<b>PrestaShop Ads.</b></p>
 		</div>
-		<div class="col-lg-2 col-lg-offset-1">
-			<a href="{$moduleLink|escape:'html':'UTF-8'}" class="btn btn-primary">{l s='Activate PrestaShop Ads' mod='gadwords'}</a>
+		<div id="gadwords_action-btn" class="col-lg-2 col-lg-offset-1">
+			<div class="loader"></div>
+			<a href="{$moduleLink|escape:'html':'UTF-8'}" class="btn btn-primary" {if false === $modulePrestashopAdsInstalled}style="display:none;"{/if}>
+				{l s='Configure PrestaShop Ads' mod='gadwords'}
+			</a>
+			{if false === $modulePrestashopAdsInstalled}
+				<span id="gadwords_installmodule" class="btn btn-primary">{l s='Install PrestaShop Ads' mod='gadwords'}</span>
+			{/if}
 		</div>
 	</div>
 </div>

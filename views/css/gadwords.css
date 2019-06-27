@@ -98,9 +98,31 @@
 	color: #FFFFFF;
 	font-family: "Open Sans";
 	font-size: 14px;
-	font-weight: 600;	
+	font-weight: 600;
 	line-height: 20px;
 	text-transform: capitalize !important;
 	background-color: #24B9D7 !important;
 	border-color: #24B9D7 !important;
+}
+
+/* Spinner */
+.loader {
+    display: none;
+    border-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+	margin: auto;
+	margin-top: 25px;
+	border: 3px solid #f3f3f3;
+    border-top: 3px solid #25b9d7;
+    width: 31px;
+    height: 31px;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

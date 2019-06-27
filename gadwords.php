@@ -29,8 +29,6 @@ if (!defined('_PS_VERSION_')) {
 	exit;
 }
 
-require_once dirname(__FILE__).'/classes/GAdwordsModuleManagement.php';
-
 class GAdwords extends Module
 {
 	const PRESTASHOP_ADS_MODULE_NAME = 'emarketing';
@@ -59,6 +57,7 @@ class GAdwords extends Module
 		$this->description = $this->l('You want to be more visible on Google and attract new clients ? Use our 75€ promo code on Google Adwords !');
 		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
 		$this->isPrestashop16 = version_compare(_PS_VERSION_, '1.7.0.0', '<');
+		$this->controller = 'AdminModuleManager';
 	}
 
 	/**
@@ -68,14 +67,34 @@ class GAdwords extends Module
 	 */
 	public function install()
 	{
-		$moduleManagement = new GAdwordsModuleManagement;
-
-		return parent::install() 
-			&& $moduleManagement->moduleManagement(self::PRESTASHOP_ADS_MODULE_NAME, self::PRESTASHOP_ADS_MODULE_ID);
+		return parent::install() & $this->installTab();
 	}
 
 	/**
-	 * Load Assets 
+     * This method is often use to create an ajax controller
+     *
+     * @param none
+     * @return bool
+     */
+    private function installTab()
+    {
+        $tab = new Tab();
+		$tab->class_name = $this->controller;
+		$tab->active = 1;
+		$tab->name = array();
+
+		foreach (Language::getLanguages(true) as $lang) {
+			$tab->name[$lang['id_lang']] = $this->name;
+		}
+
+		$tab->id_parent = -1;
+		$tab->module = $this->name;
+
+		return $tab->add();
+    }
+
+	/**
+	 * Load Assets
 	 *
 	 * @return void
 	 */
@@ -86,6 +105,12 @@ class GAdwords extends Module
 		}
 
 		$this->context->controller->addCSS($this->_path.'views/css/gadwords.css');
+		$this->context->controller->addJS($this->_path.'views/js/admin.js');
+
+		Media::addJsDef(array(
+			'gadwords_controller_url' => $this->context->link->getAdminLink($this->controller),
+            'gadwords_controller_name' => $this->controller,
+        ));
 	}
 
 	/**
@@ -104,9 +129,9 @@ class GAdwords extends Module
 		}
 
 		return $this->context->link->getAdminLink(
-			'AdminModules', 
-			true, 
-			false, 
+			'AdminModules',
+			true,
+			false,
 			array('configure' => self::PRESTASHOP_ADS_MODULE_NAME)
 		);
 	}

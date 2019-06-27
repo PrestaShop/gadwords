@@ -27,12 +27,15 @@
 
 class GAdwordsModuleManagement
 {
-    /**
+	/**
 	 * Manage the module and return the module configuration link if it is installed
+	 *
+	 * @param  string $moduleName
+	 * @param  int $moduleId
 	 *
 	 * @return bool
 	 */
-	public function moduleManagement($moduleName, $moduleId)
+	public function moduleManagement(string $moduleName, int $moduleId)
 	{
 		// Is the module is installed ?
 		if (Module::isInstalled($moduleName)) {
@@ -48,7 +51,7 @@ class GAdwordsModuleManagement
 		if (!$modulePrestashopAds) {
 			return false;
 		}
-		
+
 		return $modulePrestashopAds->install();
 	}
 
@@ -60,7 +63,7 @@ class GAdwordsModuleManagement
 	 *
 	 * @return bool
 	 */
-	private function isModuleOnDisk($moduleName, $moduleId)
+	private function isModuleOnDisk(string $moduleName, int $moduleId)
 	{
 		$modulesOnDisk = Module::getModulesDirOnDisk();
 
@@ -79,13 +82,13 @@ class GAdwordsModuleManagement
 	 *
 	 * @return bool
 	 */
-	public function downloadModule($moduleName, $moduleId)
+	public function downloadModule(string $moduleName, int $moduleId)
 	{
 		$length = file_put_contents(
-			_PS_MODULE_DIR_.basename($moduleName).'.zip', 
+			_PS_MODULE_DIR_.basename($moduleName).'.zip',
 			Tools::addonsRequest('module', array('id_module' => $moduleId))
 		);
-			
+
 		if (!empty($length) && Tools::ZipExtract(_PS_MODULE_DIR_.basename($moduleName).'.zip', _PS_MODULE_DIR_)) {
 			@unlink(_PS_MODULE_DIR_.basename($moduleName).'.zip');
 			return true;
