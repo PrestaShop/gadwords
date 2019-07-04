@@ -67,7 +67,7 @@ class GAdwords extends Module
      */
     public function install()
     {
-        return parent::install() & $this->installTab();
+        return parent::install() && $this->installTab();
     }
 
     /**
