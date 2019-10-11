@@ -36,7 +36,7 @@
                     <div class="row">
                         <img src="{$module_dir|escape:'html':'UTF-8'}views/img/for_shopping.png" alt="{l s='for shopping' mod='gadwords'}" />
                         <p>
-                            {l s='Make it easy for shoppers to discover and buy your products with a Google Smart Shopping campaign in PrestaShop.' mod='gadwords'}
+                            {l s='Make it easy for shoppers to discover and buy your products with a Smart Shopping campaign on Google.' mod='gadwords'}
                         </p>
                     </div>
                 </div>
