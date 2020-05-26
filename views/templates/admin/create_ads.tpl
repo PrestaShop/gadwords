@@ -30,7 +30,7 @@
             <img src="{$module_dir|escape:'html':'UTF-8'}views/img/target_img.png" alt="{l s='Google AdWords' mod='gadwords'}"/>
         </div>
         <div class="col-lg-7">
-            <p>{l s='Start advertising on Google Shopping with the PrestaShop Ads module, get up to 120€ in ad credit.' mod='gadwords'}</p>
+            <p>{l s='Start advertising on Google with the PrestaShop Ads module, get up to 120€ in ad credit.' mod='gadwords'}</p>
         </div>
         <div id="gadwords_action-btn" class="col-lg-2 col-lg-offset-1">
             <div class="loader"></div>
