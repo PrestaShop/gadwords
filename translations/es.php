@@ -2,15 +2,15 @@
 global $_MODULE;
 $_MODULE = array();
 $_MODULE['<{gadwords}prestashop>gadwords_d323dff6f7de41c0b9af4c35e21dc032'] = '';
-$_MODULE['<{gadwords}prestashop>gadwords_2ad507e11d57ff043818ed8eaa876c46'] = '';
+$_MODULE['<{gadwords}prestashop>gadwords_2ad507e11d57ff043818ed8eaa876c46'] = 'Consigue resultados tangibles con los anuncios de Shopping de PrestaShop y Google. Facilita a los compradores la búsqueda y compra de sus productos con las campañas Google Smart Shopping en PrestaShop.';
 $_MODULE['<{gadwords}prestashop>gadwords_dcdd08ee104839c2015cdd740f2e1f39'] = 'No se puede instalar Prestashop Ads';
 $_MODULE['<{gadwords}prestashop>create_ads_77f0fe9b5917f3651715b0d38db936ad'] = '';
-$_MODULE['<{gadwords}prestashop>create_ads_c3d9796e82c51422efcafda2840f1bfa'] = 'Comienza a publicar en Google con el módulo PrestaShop Ads, obten hasta 120 € en crédito publicitario.';
+$_MODULE['<{gadwords}prestashop>create_ads_a0a4760d8dbf4d5fbf36438aac880600'] = 'Comienza a publicar en Google Shopping con el módulo PrestaShop Ads, obten hasta 120 € en crédito publicitario.';
 $_MODULE['<{gadwords}prestashop>create_ads_91cef61323df65d078c4b76ce9370db5'] = 'Activar PrestaShop Ads';
 $_MODULE['<{gadwords}prestashop>create_ads_91cef61323df65d078c4b76ce9370db5'] = 'Activar PrestaShop Ads';
 $_MODULE['<{gadwords}prestashop>informations_77f0fe9b5917f3651715b0d38db936ad'] = '';
 $_MODULE['<{gadwords}prestashop>informations_bf86bf463dcd54dba44adab231d25c70'] = 'Campañas de Shopping';
-$_MODULE['<{gadwords}prestashop>informations_3c280b278f171a30fe07623a64f3505c'] = 'Facilita a los compradores la búsqueda y compra de sus productos con las campañas Smart Shopping en Google.';
+$_MODULE['<{gadwords}prestashop>informations_124cbce33fb7a31d3f9c3489d5203c51'] = 'Facilita a los compradores la búsqueda y compra de sus productos con las campañas Google Smart Shopping en PrestaShop.';
 $_MODULE['<{gadwords}prestashop>informations_75eb04605f487cece93811c27c9308a7'] = '';
 $_MODULE['<{gadwords}prestashop>informations_1763b0ceeb82b9f8d2c192915d451b30'] = 'Campañas más inteligentes. Alcance más amplio.';
 $_MODULE['<{gadwords}prestashop>informations_98f15c1b1e03ae61b0c05745c33f9378'] = 'Llega a clientes que buscan los productos que ofreces en el momento en el que quieren comprarlos a través de la Búsqueda de Google, YouTube, Gmail y más.';

@@ -2,15 +2,15 @@
 global $_MODULE;
 $_MODULE = array();
 $_MODULE['<{gadwords}prestashop>gadwords_d323dff6f7de41c0b9af4c35e21dc032'] = '';
-$_MODULE['<{gadwords}prestashop>gadwords_2ad507e11d57ff043818ed8eaa876c46'] = '';
+$_MODULE['<{gadwords}prestashop>gadwords_2ad507e11d57ff043818ed8eaa876c46'] = 'Ottieni risultati visibili con gli annunci Shopping di Google. Rendi i tuoi prodotti facili da trovare e da comprare per i tuoi potenziali clienti con le campagne Google Smart Shopping su PrestaShop.';
 $_MODULE['<{gadwords}prestashop>gadwords_dcdd08ee104839c2015cdd740f2e1f39'] = 'Impossibile installare PrestaShop Ads';
 $_MODULE['<{gadwords}prestashop>create_ads_77f0fe9b5917f3651715b0d38db936ad'] = '';
-$_MODULE['<{gadwords}prestashop>create_ads_c3d9796e82c51422efcafda2840f1bfa'] = 'Inizia a fare pubblicità su Google con il modulo PrestaShop Ads, ottieni fino a 120 € in crediti pubblicitari.';
+$_MODULE['<{gadwords}prestashop>create_ads_a0a4760d8dbf4d5fbf36438aac880600'] = 'Inizia a fare pubblicità su Google Shopping con il modulo PrestaShop Ads, ottieni fino a 120 € in crediti pubblicitari.';
 $_MODULE['<{gadwords}prestashop>create_ads_91cef61323df65d078c4b76ce9370db5'] = 'Attiva PrestaShop Ads';
 $_MODULE['<{gadwords}prestashop>create_ads_91cef61323df65d078c4b76ce9370db5'] = 'Attiva PrestaShop Ads';
 $_MODULE['<{gadwords}prestashop>informations_77f0fe9b5917f3651715b0d38db936ad'] = '';
 $_MODULE['<{gadwords}prestashop>informations_bf86bf463dcd54dba44adab231d25c70'] = 'Campagne Shopping';
-$_MODULE['<{gadwords}prestashop>informations_3c280b278f171a30fe07623a64f3505c'] = 'Rendi i tuoi prodotti facili da trovare e da comprare per i tuoi potenziali clienti grazie alle le campagne Smart Shopping su Google.';
+$_MODULE['<{gadwords}prestashop>informations_124cbce33fb7a31d3f9c3489d5203c51'] = 'Rendi i tuoi prodotti facili da trovare e da comprare per i tuoi potenziali clienti grazie alle le campagne Google Smart Shopping su PrestaShop.';
 $_MODULE['<{gadwords}prestashop>informations_75eb04605f487cece93811c27c9308a7'] = '';
 $_MODULE['<{gadwords}prestashop>informations_1763b0ceeb82b9f8d2c192915d451b30'] = 'Campagne intelligenti. Ampia portata.';
 $_MODULE['<{gadwords}prestashop>informations_98f15c1b1e03ae61b0c05745c33f9378'] = 'Raggiungi i clienti che stanno cercando i tuoi prodotti nel momento in cui vogliono comprarli - attraverso la ricerca Google, YouTube, Gmail e altro ancora!';
