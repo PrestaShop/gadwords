@@ -28,6 +28,11 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+$autoloadPath = __DIR__ . '/vendor/autoload.php';
+if (file_exists($autoloadPath)) {
+    require_once $autoloadPath;
+}
+
 class GAdwords extends Module
 {
     const PRESTASHOP_ADS_MODULE_NAME = 'emarketing';
