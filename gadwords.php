@@ -52,7 +52,7 @@ class GAdwords extends Module
     {
         $this->name = 'gadwords';
         $this->tab = 'advertising_marketing';
-        $this->version = '2.0.1';
+        $this->version = '2.0.2';
         $this->author = 'PrestaShop';
         $this->bootstrap = true;
         parent::__construct();
