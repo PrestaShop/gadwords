@@ -1,14 +1,20 @@
 <?php
-
 global $_MODULE;
 $_MODULE = array();
-$_MODULE['<{gadwords}prestashop>gadwords_77f0fe9b5917f3651715b0d38db936ad'] = 'Google AdWords';
-$_MODULE['<{gadwords}prestashop>gadwords_d7658be1b56371293cd31faebc89594a'] = 'Vous souhaitez être plus visible sur Google et attirer de nouveaux clients ? Bénéficiez de votre code promo 75€ offerts sur Google AdWords !';
-$_MODULE['<{gadwords}prestashop>gadwords_4bfb064ad861b9d2af3a1cdef6af1bae'] = '//www.youtube.com/embed/GNMZgum0f9g?rel=0&controls=0&showinfo=0';
-$_MODULE['<{gadwords}prestashop>gadwords_26700df78ce041ff7dc0506489b273f6'] = 'Diffusez votre publicité aux internautes au moment où ils cherchent vos produits ou vos services. Google et PrestaShop triplent votre investissement publicitaire en vous offrant 75€ une fois vos premiers 25€ dépensés* !';
-$_MODULE['<{gadwords}prestashop>gadwords_9b22559aafb75ab90687d7b12cc85973'] = 'Entrez votre code promotionnel une fois vos informations de facturation saisies et nous ajouterons automatiquement votre avoir dès €25 dépensés*.';
-$_MODULE['<{gadwords}prestashop>gadwords_2b456146ad32d5cdee08f1e844346e68'] = 'Vous avez des questions ? Contactez le 0 805 981 042 et bénéficiez gratuitement de l\'aide d\'un expert Google AdWords pour créer votre première campagne et vous expliquer comment tirer le meilleur parti d\'AdWords.';
-$_MODULE['<{gadwords}prestashop>gadwords_c391b2a443c8cf6ac0650abb19bc60e2'] = 'Votre code promo Google AdWords pour votre boutique est';
-$_MODULE['<{gadwords}prestashop>gadwords_310ea748429c48440caefe153ff77855'] = 'Commencez votre campagne maintenant en utilisant votre code promo';
-$_MODULE['<{gadwords}prestashop>gadwords_80c94ecd091e7cf16771ecc521edf6a6'] = 'Commencez votre campagne maintenant';
-$_MODULE['<{gadwords}prestashop>gadwords_e64a391c8b0d9015df793a179fb12938'] = 'offre soumise à conditions';
+$_MODULE['<{gadwords}prestashop>gadwords_d323dff6f7de41c0b9af4c35e21dc032'] = '';
+$_MODULE['<{gadwords}prestashop>gadwords_2ad507e11d57ff043818ed8eaa876c46'] = 'Boostez votre visibilité avec les annonces Shopping de PrestaShop et Google. Facilitez la découverte et l’achat de vos produits par les acheteurs grâce aux campagnes Google Smart Shopping sur PrestaShop.';
+$_MODULE['<{gadwords}prestashop>gadwords_dcdd08ee104839c2015cdd740f2e1f39'] = 'Impossible d\'installer Prestashop Ads';
+$_MODULE['<{gadwords}prestashop>create_ads_77f0fe9b5917f3651715b0d38db936ad'] = '';
+$_MODULE['<{gadwords}prestashop>create_ads_a0a4760d8dbf4d5fbf36438aac880600'] = 'Lancez vos campagnes de publicité sur Google Shopping avec le module PrestaShop Ads et obtenez jusqu\'à 120 € de crédit publicitaire.';
+$_MODULE['<{gadwords}prestashop>create_ads_91cef61323df65d078c4b76ce9370db5'] = 'Activez PrestaShop Ads';
+$_MODULE['<{gadwords}prestashop>create_ads_91cef61323df65d078c4b76ce9370db5'] = 'Activez PrestaShop Ads';
+$_MODULE['<{gadwords}prestashop>informations_77f0fe9b5917f3651715b0d38db936ad'] = '';
+$_MODULE['<{gadwords}prestashop>informations_bf86bf463dcd54dba44adab231d25c70'] = 'Campagnes Shopping';
+$_MODULE['<{gadwords}prestashop>informations_124cbce33fb7a31d3f9c3489d5203c51'] = 'Facilitez la découverte et l’achat de vos produits par les acheteurs grâce aux campagnes Google Smart Shopping sur PrestaShop.';
+$_MODULE['<{gadwords}prestashop>informations_75eb04605f487cece93811c27c9308a7'] = '';
+$_MODULE['<{gadwords}prestashop>informations_1763b0ceeb82b9f8d2c192915d451b30'] = 'Campagnes intelligentes. Audience élargie.';
+$_MODULE['<{gadwords}prestashop>informations_98f15c1b1e03ae61b0c05745c33f9378'] = 'Touchez les clients recherchant les produits que vous proposez, au moment où ils souhaitent les acheter, et ce, via Google, YouTube, Gmail et plus encore!';
+$_MODULE['<{gadwords}prestashop>informations_959033ae2158988799512aa36fe85a22'] = 'Pas le temps ? Pas de problème !';
+$_MODULE['<{gadwords}prestashop>informations_268b4316931b98bcf6eda48d57e9ad15'] = 'Après l\'installation, vous n\'avez plus qu\'à définir votre budget et la technologie intelligente de Google s\'occupe du reste, comme le placement des annonces et les enchères. Vous ne payez que lorsque les acheteurs cliquent sur vos annonces.';
+$_MODULE['<{gadwords}prestashop>informations_e8392f5e9072bc4144db0f24bb0800c7'] = 'Une image vaut mille mots';
+$_MODULE['<{gadwords}prestashop>informations_a17b7883d415256bdff332acfd05583e'] = 'De nombreux annonceurs parviennent à doubler, voire tripler leur taux de clics avec les annonces Shopping, par rapport aux publicités textuelles sans images.';
